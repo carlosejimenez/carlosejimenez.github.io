@@ -8,8 +8,8 @@ profile:
   align: left
   image: banner.jpg
 
-news: true  # includes a list of news items
-selected_papers: true
+news: false  # includes a list of news items
+selected_papers: false
 social: true
 ---
 
