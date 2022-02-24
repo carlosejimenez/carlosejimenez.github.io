@@ -1,3 +1,15 @@
-"Rosen":
-  - firstname: ["Nathan", "N."]
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
+"Murahari":
+  - firstname: ["Vishvak", "V."]
+    url: https://vishvakmurahari.com
+
+"Narasimhan":
+  - firstname: ["Karthik", "K."]
+    url: https://www.cs.princeton.edu/~karthikn/
+
+"Yang":
+  - firstname: ["Runzhe", "R."]
+    url: https://runzhe-yang.science
+
+"Russakovsky":
+  - firstname: ["Olga", "O."]
+    url: https://www.cs.princeton.edu/~olgarus/
