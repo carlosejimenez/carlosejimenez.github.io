@@ -1,12 +1,15 @@
 "Chen":
   - firstname: ["Danqi"]
     url: https://www.cs.princeton.edu/~danqic/
+
 "Chen":
   - firstname: ["Howard"]
     url: https://howard50b.github.io/
+
 "Deshpande":
   - firstname: ["Ameet"]
     url: https://ameet-1997.github.io/
+
 "Murahari":
   - firstname: ["Vishvak", "V."]
     url: https://vishvakmurahari.com
