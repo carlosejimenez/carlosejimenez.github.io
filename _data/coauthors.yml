@@ -1,27 +1,59 @@
-"Chen":
-  - firstname: ["Danqi"]
-    url: https://www.cs.princeton.edu/~danqic/
+"danqi-chen":
+  firstname: "Danqi"
+  lastname: "Chen"
+  url: https://www.cs.princeton.edu/~danqic/
 
-"Chen":
-  - firstname: ["Howard"]
-    url: https://howard50b.github.io/
+"howard-chen":
+  firstname: "Howard"
+  lastname: "Chen"
+  url: https://howard50b.github.io/
 
-"Deshpande":
-  - firstname: ["Ameet"]
-    url: https://ameet-1997.github.io/
+"ameet-deshpande":
+  firstname: "Ameet"
+  lastname: "Deshpande"
+  url: https://ameet-1997.github.io/
 
-"Murahari":
-  - firstname: ["Vishvak", "V."]
-    url: https://vishvakmurahari.com
+"vishvak-murahari":
+  firstname: "Vishvak"
+  lastname: "Murahari"
+  url: https://vishvakmurahari.com
 
-"Narasimhan":
-  - firstname: ["Karthik", "K."]
-    url: https://www.cs.princeton.edu/~karthikn/
+"karthik-narasimhan":
+  firstname: "Karthik"
+  lastname: "Narasimhan"
+  url: https://www.cs.princeton.edu/~karthikn/
 
-"Yang":
-  - firstname: ["Runzhe", "R."]
-    url: https://runzhe-yang.science
+"runzhe-yang":
+  firstname: "Runzhe"
+  lastname: "Yang"
+  url: https://runzhe-yang.science
 
-"Russakovsky":
-  - firstname: ["Olga", "O."]
-    url: https://www.cs.princeton.edu/~olgarus/
+"olga-russakovsky":
+  firstname: "Olga"
+  lastname: "Russakovsky"
+  url: https://www.cs.princeton.edu/~olgarus/
+
+"john-yang":
+  firstname: "John"
+  lastname: "Yang"
+  url: https://john-b-yang.github.io/
+
+"shunyu-yao":
+  firstname: "Shunyu"
+  lastname: "Yao"
+  url: https://ysymyth.github.io/
+
+"alexander-wettig":
+  firstname: "Alexander"
+  lastname: "Wettig"
+  url: https://www.cs.princeton.edu/~awettig/
+
+"kexin-pei":
+  firstname: "Kexin"
+  lastname: "Pei"
+  url: https://sites.google.com/site/kexinpeisite/
+
+"ofir-press":
+  firstname: "Ofir"
+  lastname: "Press"
+  url: https://ofir.io/
