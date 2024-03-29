@@ -19,4 +19,4 @@ I did my B.S. in computer science at the [University of Utah](https://www.cs.uta
 
 I'm deeply interested in science and technology and how they can influence the trajectory of our civilization.
 
-In addition to my interests in science and technology, in my free time I like reading/thinking about ethics, {Chinese, Russian, Turkish, Japanese} history, urban planning, sociology of scientific knowledge, and art/architecture.
+In addition to my interests in science and technology, in my free time I like reading/thinking about philosophy, {Chinese, Russian, Turkish, Japanese} history, urban planning, sociology of scientific knowledge, and art/architecture.
