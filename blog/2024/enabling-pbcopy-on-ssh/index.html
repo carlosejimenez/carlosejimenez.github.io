@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Carlos E. Jimenez | blog</title>
+    <title>Carlos E. Jimenez | Enabling pbcopy over SSH with iTerm2</title>
     <meta name="author" content="Carlos E. Jimenez" />
     <meta name="description" content="Carlos E. Jimenez
 " />
@@ -34,7 +34,7 @@
     <link rel="icon" href="/assets/img/favicon.png" type="image/png">
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="shortcut icon" type="image/png" href="favicon.png">
-    <link rel="canonical" href="https://carlosejimenez.com/blog/">
+    <link rel="canonical" href="https://carlosejimenez.com/blog/2024/enabling-pbcopy-on-ssh/">
 
     <!-- Dark Mode -->
     <script src="/assets/js/theme.js"></script>
@@ -69,7 +69,7 @@
               
               <!-- Blog -->
               <li class="nav-item active">
-                <a class="nav-link" href="/blog/">blog<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/blog/">blog</a>
               </li>
 
               <!-- Other pages -->
@@ -78,8 +78,8 @@
               </li>
 
               <!-- Toogle theme mode -->
-              <div class = "toggle-container">
-                <a id = "light-toggle">
+              <div class="toggle-container">
+                <a id="light-toggle">
                   <i class="fas fa-moon"></i>
                   <i class="fas fa-sun"></i>
                 </a>
@@ -92,52 +92,57 @@
 
     <!-- Content -->
     <div class="container mt-5">
-      <div class="post">
+      <!-- _layouts/post.html -->
 
-  <div class="header-bar">
-    <h2>Articles</h2>
-    <!-- <h2></h2> -->
-  </div>
+<div class="post">
 
-
-  <ul class="post-list">
-    
-
-    
-    
-    
-    
-
-    <li>
-      <h3>
-        <a class="post-title" href="/blog/2024/enabling-pbcopy-on-ssh/">
-          Enabling pbcopy over SSH with iTerm2
-        </a>
-      </h3>
-      <p></p>
-      <p class="post-meta">
-        2 min read &nbsp; &middot; &nbsp; November 30, 2024
-      </p>
-      <p class="post-tags">
-        <a href="/blog/2024">
-          <i class="fas fa-calendar fa-sm"></i> 2024
-        </a>
-        
-        
-        &nbsp; &middot; &nbsp;
-        
+  <header class="post-header">
+    <h1 class="post-title">Enabling pbcopy over SSH with iTerm2</h1>
+    <p class="post-meta">November 30, 2024</p>
+    <p class="post-tags">
+      <a href="/blog/2024"> <i class="fas fa-calendar fa-sm"></i> 2024 </a>
+        ·  
         <a href="/blog/category/blog">
-          <i class="fas fa-tag fa-sm"></i> blog
-        </a> &nbsp;
-        
-        
-      </p>
-    </li>
+          <i class="fas fa-tag fa-sm"></i> blog</a>  
+          
 
-    
-  </ul>
+    </p>
+  </header>
 
-  
+  <article class="post-content">
+    <p>When working in the command line, you may want to quickly copy command output or file contents to your clipboard, perhaps to share with someone or to paste somewhere directly. On macOS, the simplest approach is using the <code class="language-plaintext highlighter-rouge">pbcopy</code> command, which copies any piped input to your clipboard, similar to <code class="language-plaintext highlighter-rouge">xclip</code> on Linux.</p>
+
+<p>However, <code class="language-plaintext highlighter-rouge">pbcopy</code> typically doesn’t work in remote SSH sessions. While there are various workarounds with different levels of complexity and thoroughness, I’ve found a straightforward solution for iTerm2 users that’s simpler than the alternatives discussed in <a href="https://stackoverflow.com/questions/1152362/how-to-send-data-to-local-clipboard-from-a-remote-ssh-session" target="_blank" rel="noopener noreferrer">this Stack Overflow thread</a>.</p>
+
+<p>Here’s how to enable <code class="language-plaintext highlighter-rouge">pbcopy</code> over SSH:</p>
+
+<ol>
+  <li>
+    <p>First, define this function on the remote server by adding it to your <code class="language-plaintext highlighter-rouge">~/.bashrc</code>:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> pbcopy<span class="o">()</span> <span class="o">{</span>
+     <span class="nv">input</span><span class="o">=</span><span class="si">$(</span><span class="nb">cat</span><span class="si">)</span>
+     <span class="nv">encoded</span><span class="o">=</span><span class="si">$(</span><span class="nb">printf</span> <span class="s2">"%s"</span> <span class="s2">"</span><span class="nv">$input</span><span class="s2">"</span> | <span class="nb">base64</span> <span class="nt">-w</span> 0<span class="si">)</span>
+     <span class="nb">printf</span> <span class="s2">"</span><span class="se">\0</span><span class="s2">33]52;c;%s</span><span class="se">\0</span><span class="s2">07"</span> <span class="s2">"</span><span class="nv">$encoded</span><span class="s2">"</span>
+ <span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>In iTerm2 on your local machine, navigate to Settings &gt; General &gt; Selection and enable “Applications in terminal may access clipboard”. You can leave “Allow sending of clipboard contents?” set to “Always Ask” as it doesn’t affect this functionality.</p>
+  </li>
+  <li>
+    <p>For tmux users, add this line to your <code class="language-plaintext highlighter-rouge">~/.tmux.conf</code> to ensure clipboard interaction works within tmux sessions:</p>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">set -s set-clipboard on</code></li>
+      <li>This setting allows <code class="language-plaintext highlighter-rouge">tmux</code> to interact with the system clipboard, ensuring that the <code class="language-plaintext highlighter-rouge">pbcopy</code> function works seamlessly within <code class="language-plaintext highlighter-rouge">tmux</code> sessions.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Note: This method is specific to macOS and iTerm2.</p>
+
+  </article>
 
 </div>
 
