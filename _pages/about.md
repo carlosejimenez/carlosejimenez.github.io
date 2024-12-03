@@ -6,7 +6,7 @@ permalink: /
 
 profile:
   align: left
-  image: <a href="https://washingtonstatue.org/"><img src="banner.jpg" alt="Profile Image"></a>
+  image: banner.jpg
 
 news: false  # includes a list of news items
 selected_papers: false
