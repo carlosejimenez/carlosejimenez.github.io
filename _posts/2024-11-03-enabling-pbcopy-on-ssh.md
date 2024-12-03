@@ -5,7 +5,7 @@ date: 2024-11-30
 categories: blog
 ---
 
-When working in the command line, you may want to quickly copy command output or file contents to your clipboard, perhaps to share with someone or for simple text manipulation. On macOS, the simplest approach is using the `pbcopy` command, which copies any piped input to your clipboard. Similar to `xclip` on Linux, this is a very simple command that works well for many use cases.
+When working in the command line, you may want to quickly copy command output or file contents to your clipboard, perhaps to share with someone or to paste somewhere directly. On macOS, the simplest approach is using the `pbcopy` command, which copies any piped input to your clipboard, similar to `xclip` on Linux.
 
 However, `pbcopy` typically doesn't work in remote SSH sessions. While there are various workarounds with different levels of complexity and thoroughness, I've found a straightforward solution for iTerm2 users that's simpler than the alternatives discussed in [this Stack Overflow thread](https://stackoverflow.com/questions/1152362/how-to-send-data-to-local-clipboard-from-a-remote-ssh-session).
 
