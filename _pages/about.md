@@ -13,7 +13,7 @@ selected_papers: false
 social: true
 ---
 
-I'm a PhD student at [Princeton University](https://www.cs.princeton.edu), advised by [Prof. Karthik Narasimhan](https://www.cs.princeton.edu/~karthikn/). I study AI and ML for natural language processing. My research interests include language models for code and task-oriented dialogue.
+I'm a PhD candidate at [Princeton University](https://www.cs.princeton.edu), advised by [Prof. Karthik Narasimhan](https://www.cs.princeton.edu/~karthikn/). I study AI and ML for natural language processing. My research interests include labor automation, AI for software engineering, and Human-AI interaction.
 
 I did my B.S. in computer science at the [University of Utah](https://www.cs.utah.edu/), where my thesis was supervised by [Prof. Ellen Riloff](http://www.cs.utah.edu/~riloff/). I grew up near Salt Lake City, Utah.
 
