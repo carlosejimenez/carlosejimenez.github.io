@@ -1,4 +1,8 @@
 // Add this at the top of the file
+const BASE_PATH = window.location.pathname.endsWith('/') 
+    ? window.location.pathname 
+    : window.location.pathname + '/';
+
 function convertMarkdownToHTML(markdown) {
     return marked.parse(markdown);
 }
@@ -16,7 +20,7 @@ function createBlogPostHTML(post) {
 
 async function loadBlogPosts() {
     try {
-        const response = await fetch('./posts/index.json');
+        const response = await fetch(BASE_PATH + 'posts/index.json');
         const posts = await response.json();
         
         const blogList = document.querySelector('.blog-list');
@@ -29,6 +33,8 @@ async function loadBlogPosts() {
         });
     } catch (error) {
         console.error('Error loading blog posts:', error);
+        const blogList = document.querySelector('.blog-list');
+        blogList.innerHTML = '<p>Error loading blog posts. Please try again later.</p>';
     }
 }
 
@@ -48,7 +54,11 @@ async function loadBlogPost(slug) {
         // Update the URL without triggering hashchange
         history.replaceState(null, '', `#blog/${slug}`);
         
-        const response = await fetch(`./posts/${slug}.md`);
+        const response = await fetch(`${BASE_PATH}posts/${slug}.md`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
         const markdown = await response.text();
         
         const blogList = document.querySelector('.blog-list');
@@ -85,6 +95,16 @@ async function loadBlogPost(slug) {
         window.scrollTo(0, 0);
     } catch (error) {
         console.error('Error loading blog post:', error);
+        const blogContent = document.querySelector('.blog-content');
+        blogContent.innerHTML = `
+            <div class="back-to-blog" role="button" tabindex="0">← Blog</div>
+            <div class="error-message">
+                <p>Error loading blog post. Please try again later.</p>
+            </div>
+        `;
+        
+        const backButton = document.querySelector('.back-to-blog');
+        backButton.addEventListener('click', handleBackToBlog);
     }
 }
 
