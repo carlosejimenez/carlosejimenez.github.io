@@ -2,13 +2,15 @@ const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter'); // You'll need to: npm install gray-matter
 
-// Add JSDoc comments for better documentation
+// Get POSTS_DIR from environment variable or use default
+const POSTS_DIR = process.env.POSTS_DIR || path.join(__dirname, '../site/posts');
+
 /**
  * Configuration for blog post processing
  * @constant {Object}
  */
 const CONFIG = {
-    POSTS_DIR: path.join(__dirname, '../site/posts'),
+    POSTS_DIR: POSTS_DIR,
     OUTPUT_FILE: path.join(POSTS_DIR, 'index.json'),
     VALID_EXTENSIONS: ['.md']
 };

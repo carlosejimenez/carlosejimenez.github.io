@@ -27,6 +27,8 @@ jobs:
 
       - name: Generate blog index
         run: node scripts/generate-blog-index.js
+        env:
+          POSTS_DIR: 'site/posts'  # Adjust this path according to your project structure
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
