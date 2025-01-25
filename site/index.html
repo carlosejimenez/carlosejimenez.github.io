@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal portfolio and research work">
+    
+    <title>Your Name - Research Portfolio</title>
+    
+    <!-- Preload critical assets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Stylesheets -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background-color: black; color: white;">
+    <nav class="sidebar" style="background: none; border-right: 1px solid white;" role="navigation">
+        <div class="nav-brand">
+            <span class="brand-text">Carlos E. Jimenez</span>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="#about" class="nav-link active">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#projects" class="nav-link">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a href="#contact" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    
+    <main class="content">
+        <section id="about" class="section active" aria-label="About Me">
+            <div class="about-container">
+                <div class="profile">
+                    <img src="assets/images/about/profile.jpg"
+                         alt="Profile photograph" 
+                         class="profile-image"
+                         loading="lazy">
+                </div>
+                <div class="about-content">
+                    <p>I'm a PhD candidate at <a href="https://www.cs.princeton.edu" target="_blank">Princeton University</a>, advised by <a href="https://www.cs.princeton.edu/~karthikn/" target="_blank">Prof. Karthik Narasimhan</a>. I study AI and ML for natural language processing. My research interests include agentic AI, AI for software engineering, and Human-AI interaction.</p>
+
+                    <p>I did my B.S. in computer science at the <a href="https://www.cs.utah.edu/" target="_blank">University of Utah</a>, where my thesis was supervised by <a href="http://www.cs.utah.edu/~riloff/" target="_blank">Prof. Ellen Riloff</a>. I grew up near Salt Lake City, Utah.</p>
+
+                    <p>I'm deeply interested in science and technology and how they can influence the trajectory of our civilization.</p>
+
+                    <p>In addition to my interests in science and technology, in my free time I like reading/thinking about philosophy, {Chinese, Russian, Turkish, Japanese} history, urban planning, sociology of scientific knowledge, and art/architecture.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects" class="section" aria-label="Projects">
+            <div class="projects-container">
+                <!-- Projects will be dynamically loaded here -->
+            </div>
+        </section>
+        
+        <section id="contact" class="section" aria-label="Contact">
+            <div class="contact-container">
+                <div class="contact-links">
+                    <div class="contact-item">
+                        email: <a href="mailto:carlosej@princeton.edu">carlosej@princeton.edu</a>
+                    </div>
+                    <div class="contact-item">
+                        email: <a href="mailto:cjsaltlake@gmail.com">cjsaltlake@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        twitter: <a href="https://twitter.com/_carlosejimenez" target="_blank">_carlosejimenez</a>
+                    </div>
+                    <div class="contact-item">
+                        bluesky: <a href="https://bsky.app/profile/closji.bsky.social" target="_blank">closji.bsky.social</a>
+                    </div>
+                    <div class="contact-item">
+                        github: <a href="https://github.com/carlosejimenez" target="_blank">carlosejimenez</a>
+                    </div>
+                    <div class="contact-item">
+                        orcid: <a href="https://orcid.org/0000-0001-9370-3909" target="_blank">0000-0001-9370-3909</a>
+                    </div>
+                    <div class="contact-item">
+                        substack: <a href="https://substack.com/@closji" target="_blank">closji</a>
+                    </div>
+                    <div class="contact-item wechat-container">
+                        wechat: <span>closji</span>
+                        <img src="assets/images/contact/wechat.jpeg" alt="WeChat QR Code" class="wechat-qr">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html> 
