@@ -29,6 +29,9 @@
                 <a href="#projects" class="nav-link">Projects</a>
             </li>
             <li class="nav-item">
+                <a href="#blog" class="nav-link">Blog</a>
+            </li>
+            <li class="nav-item">
                 <a href="#contact" class="nav-link">Contact</a>
             </li>
         </ul>
@@ -58,6 +61,17 @@
         <section id="projects" class="section" aria-label="Projects">
             <div class="projects-container">
                 <!-- Projects will be dynamically loaded here -->
+            </div>
+        </section>
+        
+        <section id="blog" class="section" aria-label="Blog">
+            <div class="blog-container">
+                <div class="blog-list">
+                    <!-- Blog posts will be loaded here -->
+                </div>
+                <div class="blog-content">
+                    <!-- Full article content will be loaded here -->
+                </div>
             </div>
         </section>
         
@@ -94,6 +108,8 @@
         </section>
     </main>
 
-    <script src="js/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
 </body>
 </html> 
