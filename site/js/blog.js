@@ -101,4 +101,11 @@ function handleBackToBlog() {
     blogContent.classList.remove('active');
     blogContent.innerHTML = '';
     window.scrollTo(0, 0);
-} 
+}
+
+// Export the functions that need to be used in main.js
+export {
+    loadBlogPosts,
+    handleBlogNavigation,
+    handleBackToBlog
+}; 

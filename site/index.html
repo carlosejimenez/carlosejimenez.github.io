@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body style="background-color: black; color: white;">
-    <nav class="sidebar" style="background: none; border-right: 1px solid white;" role="navigation">
+    <nav class="sidebar" style="background: none;" role="navigation">
         <div class="nav-brand">
             <span class="brand-text">Carlos E. Jimenez</span>
         </div>
@@ -117,7 +117,19 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/blog.js"></script>
+    <script type="module" src="js/blog.js"></script>
+    <script type="module" src="js/main.js"></script>
+
+    <!-- Add loading and error states -->
+    <template id="loading-template">
+        <div class="loading-spinner">Loading...</div>
+    </template>
+
+    <template id="error-template">
+        <div class="error-message">
+            <p>Something went wrong. Please try again later.</p>
+            <button class="retry-button">Retry</button>
+        </div>
+    </template>
 </body>
 </html> 

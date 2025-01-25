@@ -21,7 +21,7 @@
       "highlight": true,
       "links": {
         "arxiv": "https://arxiv.org/abs/2410.03859",
-        "website": "https://swe-agent.com/multimodal",
+        "website": "https://swe-bench.com/multimodal",
         "huggingface": "https://huggingface.co/datasets/princeton-nlp/SWE-bench_Multimodal"
       },
       "description": "[ICLR 2025] Extending SWE-bench to evaluate AI systems on visual software engineering tasks."

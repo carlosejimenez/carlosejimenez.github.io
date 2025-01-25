@@ -1,3 +1,5 @@
+import { loadBlogPosts, handleBlogNavigation } from './blog.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     // Get all nav links (updated selector to match HTML)
     const navLinks = document.querySelectorAll('.nav-link');
