@@ -37,24 +37,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load projects
     loadProjects();
     
-    // Load blog posts when on blog section or blog post
+    // Simplified blog initialization - single source of truth
     if (window.location.hash.startsWith('#blog')) {
-        loadBlogPosts(); // Always load blog posts for any blog-related hash
+        loadBlogPosts();
         handleBlogNavigation();
     }
 });
 
-// Function to activate section based on hash
 function activateSection(hash) {
-    // Extract the base section from the hash (e.g., 'blog' from 'blog/post-1')
     const baseSection = hash.split('/')[0].substring(1);
     
-    // Remove active class from all sections and nav links
-    document.querySelectorAll('.section').forEach(section => {
-        section.classList.remove('active');
-    });
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
+    // Remove active classes
+    document.querySelectorAll('.section, .nav-link').forEach(el => {
+        el.classList.remove('active');
     });
     
     // Add active class to target section and corresponding nav link
@@ -63,9 +58,8 @@ function activateSection(hash) {
     
     if (targetSection) {
         targetSection.classList.add('active');
-        // Load blog posts when switching to blog section
         if (baseSection === 'blog') {
-            loadBlogPosts(); // Always load blog posts for any blog-related hash
+            loadBlogPosts();
             handleBlogNavigation();
         }
     }

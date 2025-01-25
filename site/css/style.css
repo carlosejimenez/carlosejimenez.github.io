@@ -15,7 +15,7 @@
     --color-accent: #ff0000;
     --color-muted: #999;
     --color-border: #333;
-    --color-link: #666;
+    --color-link: #ffd8a4;
     
     /* Typography */
     --font-primary: 'JetBrains Mono', monospace;
@@ -204,7 +204,7 @@ h1 {
 }
 
 a {
-    color: var(--color-text);
+    color: var(--color-link);
     text-decoration: none;
     transition: color var(--transition-base);
 }
@@ -267,17 +267,19 @@ a:hover {
     padding: 1rem 0;
 }
 
-.post-item:hover .post-title {
-    color: var(--color-accent);
+.post-title {
+    color: var(--color-link);
+    transition: color var(--transition-base);
 }
 
-.post-title {
-    transition: color 0.2s ease;
+.post-item:hover .post-title {
+    color: var(--color-accent);
 }
 
 .back-to-blog {
     cursor: pointer;
     margin-bottom: 2rem;
+    color: var(--color-link);
     transition: color var(--transition-base);
 }
 

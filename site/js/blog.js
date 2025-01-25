@@ -32,7 +32,6 @@ async function loadBlogPosts() {
     }
 }
 
-// Update the handleBlogNavigation function
 function handleBlogNavigation() {
     const hash = window.location.hash;
     if (hash.startsWith('#blog/')) {
@@ -42,16 +41,6 @@ function handleBlogNavigation() {
         handleBackToBlog();
     }
 }
-
-// Update event listener in your initialization code
-document.addEventListener('DOMContentLoaded', () => {
-    if (window.location.hash.startsWith('#blog')) {
-        handleBlogNavigation();
-    }
-});
-
-// Add hash change listener
-window.addEventListener('hashchange', handleBlogNavigation);
 
 // Update the loadBlogPost function to modify URL
 async function loadBlogPost(slug) {
