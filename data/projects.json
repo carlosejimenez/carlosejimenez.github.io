@@ -1,0 +1,105 @@
+{
+  "projects": [
+    {
+      "title": "SWE-ReX: SWE-agent Remote Execution Framework",
+      "highlight": true,
+      "links": {
+        "github": "https://github.com/SWE-agent/SWE-ReX"
+      },
+      "description": "A runtime interface for interacting with sandboxed shell environments."
+    },
+    {
+      "title": "sb-cli: SWE-bench CLI",
+      "highlight": false,
+      "links": {
+        "github": "https://github.com/swe-bench/sb-cli"
+      },
+      "description": "A CLI for evaluating SWE-bench tasks on the SWE-bench API."
+    },
+    {
+      "title": "SWE-bench Multimodal: Do AI Systems Generalize to Visual Software Domains?",
+      "highlight": true,
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2410.03859",
+        "website": "https://swe-bench.com/multimodal",
+        "huggingface": "https://huggingface.co/datasets/princeton-nlp/SWE-bench_Multimodal"
+      },
+      "description": "[ICLR 2025] Extending SWE-bench to evaluate AI systems on visual software engineering tasks."
+    },
+    {
+      "title": "EnIGMA: Enhanced Interactive Generative Model Agent for CTF Challenges",
+      "highlight": false,
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2409.16165"
+      },
+      "description": "An LM agent framework for autonomously solving Capture The Flag (CTF) cybersecurity challenges, introducing new Agent-Computer Interfaces for interactive command-line tools."
+    },
+    {
+      "title": "SWE-bench Verified: Evaluating Code Generation with Automated Testing",
+      "highlight": true,
+      "links": {
+        "blog": "https://openai.com/index/introducing-swe-bench-verified/",
+        "huggingface": "https://huggingface.co/datasets/princeton-nlp/SWE-bench_Verified"
+      },
+      "description": "A collaboration with OpenAI on a subset of SWE-bench with human-validated solutions."
+    },
+    {
+      "title": "SWE-agent: Agent-computer Interfaces Enable Automated Software Engineering",
+      "highlight": true,
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2405.15793",
+        "website": "https://swe-agent.com",
+        "github": "https://github.com/princeton-nlp/swe-agent"
+      },
+      "description": "[NeurIPS 2024] A framework for autonomous software engineering through agent-computer interfaces."
+    },
+    {
+      "title": "SWE-bench: Can Language Models Resolve Real-world Github Issues?",
+      "highlight": true,
+      "links": {
+        "arxiv": "https://arxiv.org/abs/2310.06770",
+        "github": "https://github.com/princeton-nlp/SWE-bench",
+        "website": "https://www.swebench.com",
+        "huggingface": "https://huggingface.co/datasets/princeton-nlp/SWE-bench"
+      },
+      "description": "[ICLR 2024 (oral)] A benchmark for evaluating LLMs on real-world software engineering tasks, featuring thousands of real GitHub issues with human-validated solutions."
+    },
+    {
+      "title": "C-STS: Conditional Semantic Textual Similarity",
+      "highlight": false,
+      "links": {
+        "paper": "https://arxiv.org/abs/2305.15093",
+        "github": "https://github.com/princeton-nlp/c-sts"
+      },
+      "description": "[EMNLP 2023] A framework for evaluating semantic similarity conditioned on a context."
+    },
+    {
+      "title": "MUX-PLMs: Data Multiplexing for High-throughput Language Models",
+      "highlight": false,
+      "links": {
+        "paper": "https://arxiv.org/abs/2302.12441",
+        "github": "https://github.com/princeton-nlp/datamux-pretraining"
+      },
+      "description": "[EMNLP / Repl4NLP 2023] Efficient training of language models through data multiplexing techniques."
+    },
+    {
+      "title": "DataMUX: Data Multiplexing for Neural Networks",
+      "highlight": false,
+      "links": {
+        "paper": "https://arxiv.org/abs/2202.09318",
+        "website": "https://princeton-nlp.github.io/DataMUX/",
+        "github": "https://github.com/princeton-nlp/DataMUX"
+      },
+      "description": "[NeurIPS 2022] A novel approach to multiplexing data for efficient neural network training."
+    },
+    {
+      "title": "CARETS: A Consistency And Robustness Evaluative Test Suite for VQA",
+      "highlight": false,
+      "links": {
+        "paper": "https://arxiv.org/abs/2203.07613",
+        "github": "https://github.com/princeton-nlp/CARETS"
+      },
+      "description": "[ACL 2022] A test suite for evaluating consistency and robustness in Visual Question Answering systems."
+    }
+  ]
+} 
