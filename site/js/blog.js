@@ -51,12 +51,21 @@ function handleBlogNavigation() {
 // Update the loadBlogPost function to modify URL
 async function loadBlogPost(slug) {
     try {
-        // Update the URL without triggering hashchange
         history.replaceState(null, '', `#blog/${slug}`);
         
-        const response = await fetch(`${BASE_PATH}posts/${slug}.md`);
+        // Debug logging
+        console.log('Attempting to fetch post from:', `${BASE_PATH}posts/${slug}.md`);
+        console.log('Current BASE_PATH:', BASE_PATH);
+        console.log('Current pathname:', window.location.pathname);
+        
+        // Try both with and without the .md extension
+        let response = await fetch(`${BASE_PATH}posts/${slug}.md`);
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            // Try without .md extension as fallback
+            response = await fetch(`${BASE_PATH}posts/${slug}`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
         }
         
         const markdown = await response.text();
@@ -95,11 +104,13 @@ async function loadBlogPost(slug) {
         window.scrollTo(0, 0);
     } catch (error) {
         console.error('Error loading blog post:', error);
+        console.error('Failed URL:', `${BASE_PATH}posts/${slug}.md`);
         const blogContent = document.querySelector('.blog-content');
         blogContent.innerHTML = `
             <div class="back-to-blog" role="button" tabindex="0">← Blog</div>
             <div class="error-message">
                 <p>Error loading blog post. Please try again later.</p>
+                <p>Technical details: ${error.message}</p>
             </div>
         `;
         
