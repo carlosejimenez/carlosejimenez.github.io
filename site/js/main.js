@@ -50,6 +50,47 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.location.hash === '#gallery') {
         gallery.initialize();
     }
+
+    // Mobile Navigation
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    
+    if (!mobileNavToggle || !sidebar) {
+        console.error('Mobile nav elements not found:', {
+            mobileNavToggle: !!mobileNavToggle,
+            sidebar: !!sidebar
+        });
+    }
+
+    mobileNavToggle?.addEventListener('click', (e) => {
+        console.log('Mobile nav clicked');
+        const isOpen = sidebar.classList.toggle('active');
+        mobileNavToggle.innerHTML = isOpen ? 
+            '<i class="fas fa-times"></i>' : 
+            '<i class="fas fa-bars"></i>';
+        e.stopPropagation(); // Prevent document click from immediately closing
+    });
+
+    // Close mobile nav when clicking a link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                sidebar.classList.remove('active');
+                mobileNavToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+    });
+
+    // Close mobile nav when clicking outside
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768 && 
+            !sidebar.contains(e.target) && 
+            !mobileNavToggle.contains(e.target) && 
+            sidebar.classList.contains('active')) {
+            sidebar.classList.remove('active');
+            mobileNavToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+    });
 });
 
 function activateSection(hash) {

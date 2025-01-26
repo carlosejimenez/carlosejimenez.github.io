@@ -451,3 +451,132 @@ a:hover {
         padding: 0.1rem;
     }
 }
+
+/* Mobile Navigation Styles */
+.mobile-nav-toggle {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    background: none;
+    border: none;
+    color: var(--color-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    /* Debug styles */
+    padding: 0.5rem;
+    border: 1px solid var(--color-text);
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .sidebar {
+        position: relative;
+        order: -1;
+        width: 100%;
+        left: 0;
+        height: auto;
+        background-color: var(--color-bg);
+        padding: 1rem;
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        transform: none;
+    }
+
+    .content {
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .mobile-nav-toggle {
+        display: none;
+    }
+
+    .nav-list {
+        display: flex;
+        overflow-x: auto;
+        width: 100%;
+        padding-bottom: 0.5rem;
+    }
+
+    .nav-brand {
+        width: 100%;
+        margin-bottom: 0.5rem;
+        text-align: left;
+    }
+
+    .nav-item {
+        margin: 0;
+        flex-shrink: 0;
+    }
+
+    .nav-link {
+        padding: 0.5rem 1rem;
+        white-space: nowrap;
+    }
+
+    .about-container,
+    .projects-container,
+    .blog-container,
+    .gallery-container,
+    .contact-container {
+        margin-top: 1rem;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .profile {
+        flex: none;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .about-content {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .gallery-container {
+        height: 300px;
+    }
+
+    .gallery-nav {
+        padding: 0.1rem;
+    }
+}
+
+/* Remove or override any transforms on larger screens */
+@media (min-width: 769px) {
+    .sidebar {
+        left: calc(50% - var(--total-width) / 2);
+    }
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 480px) {
+    :root {
+        --font-size-base: 0.9rem;
+        --font-size-lg: 1.1rem;
+        --font-size-xl: 1.3rem;
+        --font-size-2xl: 1.8rem;
+    }
+
+    .project-item {
+        padding-left: 1rem;
+    }
+}
