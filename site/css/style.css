@@ -97,7 +97,7 @@ body {
 }
 
 .nav-item {
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-sm);
 }
 
 .nav-link {
@@ -123,6 +123,7 @@ body {
 .section {
     display: none;
     animation: fadeIn var(--transition-base);
+    margin-bottom: var(--spacing-lg);
 }
 
 .section.active {
@@ -193,7 +194,7 @@ body {
 }
 
 .project-link:hover {
-    color: var(--color-text);
+    color: var(--color-accent);
 }
 
 .project-description {
@@ -220,6 +221,7 @@ h1 {
     margin-bottom: 1rem;
 }
 
+/* Base link styles */
 a {
     color: var(--color-link);
     text-decoration: none;
@@ -591,5 +593,20 @@ a:hover {
 
     .project-item {
         padding-left: 1rem;
+    }
+}
+
+/* Mobile-first media queries */
+@media (min-width: var(--breakpoint-md)) {
+    .sidebar {
+        width: var(--sidebar-width);
+        height: 100vh;
+        position: fixed;
+        left: calc(50% - var(--total-width) / 2);
+    }
+
+    .content {
+        margin-left: var(--sidebar-width);
+        padding: var(--spacing-lg) var(--spacing-xl);
     }
 }
