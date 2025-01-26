@@ -475,21 +475,23 @@ a:hover {
         align-items: stretch;
         width: 100%;
         max-width: 100%;
+        padding-top: 100px;
     }
 
     .sidebar {
-        position: relative;
-        order: -1;
-        width: 100%;
+        position: fixed;
+        top: 0;
         left: 0;
+        width: 100%;
         height: auto;
-        background-color: var(--color-bg);
-        padding: 1rem;
+        background-color: rgba(26, 26, 26, 0.95);
+        backdrop-filter: blur(20px);
+        padding: 0.75rem;
         z-index: 999;
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-        transform: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
 
     .content {
@@ -507,7 +509,18 @@ a:hover {
         display: flex;
         overflow-x: auto;
         width: 100%;
-        padding-bottom: 0.5rem;
+        padding-bottom: 0.25rem;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .nav-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-list {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
     }
 
     .nav-brand {
