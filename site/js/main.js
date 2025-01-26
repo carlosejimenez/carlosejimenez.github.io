@@ -1,4 +1,5 @@
 import { loadBlogPosts, handleBlogNavigation } from './blog.js';
+import { gallery } from './gallery.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Get all nav links (updated selector to match HTML)
@@ -44,6 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
         loadBlogPosts();
         handleBlogNavigation();
     }
+
+    // Initialize gallery when its section becomes active
+    if (window.location.hash === '#gallery') {
+        gallery.initialize();
+    }
 });
 
 function activateSection(hash) {
@@ -67,6 +73,10 @@ function activateSection(hash) {
     }
     if (targetLink) {
         targetLink.classList.add('active');
+    }
+
+    if (baseSection === 'gallery') {
+        gallery.initialize();
     }
 }
 

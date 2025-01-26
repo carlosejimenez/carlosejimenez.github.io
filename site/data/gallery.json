@@ -1,0 +1,12 @@
+{
+    "images": [
+        {
+            "url": "assets/gallery/image1.jpg",
+            "caption": "Description of image 1"
+        },
+        {
+            "url": "assets/gallery/image2.jpg",
+            "caption": "Description of image 2"
+        }
+    ]
+} 

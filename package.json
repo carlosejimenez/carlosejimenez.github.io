@@ -4,7 +4,7 @@
   "description": "Personal portfolio and blog website",
   "scripts": {
     "start": "npx http-server site",
-    "build": "node scripts/generate-blog-index.js",
+    "build": "node scripts/generate-blog-index.js && node scripts/generate-gallery-index.js",
     "lint": "eslint .",
     "format": "prettier --write .",
     "test": "jest",
