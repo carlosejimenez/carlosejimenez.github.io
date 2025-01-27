@@ -154,11 +154,11 @@ body {
 }
 
 .about-content {
-    display: block;  /* Ensure it's a block element */
+    display: block;
 }
 
 .about-content p {
-    display: table;  /* This prevents breaking within paragraphs */
+    display: table;
     margin-bottom: 1.5rem;
 }
 
@@ -264,9 +264,6 @@ a:hover {
 .wechat-container {
     position: relative;
     cursor: pointer;
-}
-
-.wechat-container {
     color: var(--color-link);
     transition: color var(--transition-base);
 }
@@ -344,13 +341,12 @@ a:hover {
 }
 
 /* Responsive Design */
-@media (max-width: var(--breakpoint-md)) {
+@media (max-width: 768px) {
     .sidebar {
         width: 100%;
         height: auto;
         position: static;
         border-right: none;
-        border-bottom: 1px solid var(--color-border);
     }
     
     .content {
@@ -366,10 +362,12 @@ a:hover {
         float: none;
         margin: 0 auto 2rem;
         max-width: 300px;
+        width: 100%;
+        text-align: center;
     }
-    
+
     .about-content p {
-        display: block;  /* Reset to normal flow on mobile */
+        display: block;
     }
 }
 
@@ -491,7 +489,7 @@ a:hover {
     border: 1px solid var(--color-text);
 }
 
-@media (max-width: var(--breakpoint-md)) {
+@media (max-width: 768px) {
     body {
         flex-direction: column;
         align-items: stretch;
@@ -601,6 +599,7 @@ a:hover {
     }
 }
 
+/* Additional responsive adjustments */
 @media (max-width: 480px) {
     :root {
         --font-size-base: 0.9rem;
@@ -614,6 +613,7 @@ a:hover {
     }
 }
 
+/* Mobile-first media queries */
 @media (min-width: var(--breakpoint-md)) {
     .sidebar {
         width: var(--sidebar-width);
