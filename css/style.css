@@ -266,6 +266,15 @@ a:hover {
     cursor: pointer;
 }
 
+.wechat-container {
+    color: var(--color-link);
+    transition: color var(--transition-base);
+}
+
+.wechat-container:hover {
+    color: var(--color-accent);
+}
+
 .wechat-qr {
     display: none;
     position: fixed;
