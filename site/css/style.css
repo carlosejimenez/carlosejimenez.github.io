@@ -471,7 +471,7 @@ a:hover {
     border: 1px solid var(--color-text);
 }
 
-@media (max-width: 768px) {
+@media (max-width: var(--breakpoint-md)) {
     body {
         flex-direction: column;
         align-items: stretch;
@@ -608,5 +608,22 @@ a:hover {
     .content {
         margin-left: var(--sidebar-width);
         padding: var(--spacing-lg) var(--spacing-xl);
+    }
+}
+
+.ascii-art {
+    font-family: monospace;
+    white-space: pre;
+    font-size: calc(0.45vw);  /* This will scale based on viewport width */
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: var(--color-text);
+}
+
+@media (max-width: var(--breakpoint-md)) {
+    .ascii-art {
+        font-size: 3px; /* Minimum size for mobile */
     }
 }

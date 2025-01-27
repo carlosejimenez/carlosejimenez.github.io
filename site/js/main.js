@@ -91,6 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileNavToggle.innerHTML = '<i class="fas fa-bars"></i>';
         }
     });
+
+    // Load ASCII art
+    loadAsciiArt();
 });
 
 function activateSection(hash) {
@@ -178,6 +181,23 @@ async function loadProjects() {
         const projectsContainer = document.querySelector('.projects-container');
         if (projectsContainer) {
             projectsContainer.innerHTML = '<p>Error loading projects. Please try again later.</p>';
+        }
+    }
+}
+
+// Load ASCII art
+async function loadAsciiArt() {
+    const asciiElements = document.querySelectorAll('[data-ascii-src]');
+    
+    for (const element of asciiElements) {
+        try {
+            const response = await fetch(element.dataset.asciiSrc);
+            if (!response.ok) throw new Error('Failed to load ASCII art');
+            const text = await response.text();
+            element.textContent = text;
+        } catch (error) {
+            console.error('Error loading ASCII art:', error);
+            element.textContent = 'Error loading art';
         }
     }
 }
