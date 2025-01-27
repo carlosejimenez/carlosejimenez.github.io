@@ -1,4 +1,4 @@
-/* CSS Reset and Base Styles */
+/* Base CSS Reset */
 *,
 *::before,
 *::after {
@@ -7,7 +7,7 @@
     padding: 0;
 }
 
-/* Custom Properties */
+/* Core Variables */
 :root {
     /* Colors */
     --color-bg: #1a1a1a;
@@ -53,7 +53,7 @@
     --breakpoint-lg: 992px;
 }
 
-/* Base Styles */
+/* Core Styles */
 body {
     font-family: var(--font-primary);
     background-color: var(--color-bg);
@@ -132,14 +132,14 @@ body {
 
 /* About Section */
 .about-container {
-    display: flex;
-    gap: 2rem;
     max-width: 100%;
     margin: 2rem auto;
 }
 
 .profile {
-    flex: 0 0 300px;
+    float: left;
+    width: 300px;
+    margin: 0 2rem 1rem 0;
 }
 
 .profile-image {
@@ -154,10 +154,11 @@ body {
 }
 
 .about-content {
-    flex: 1;
+    display: block;  /* Ensure it's a block element */
 }
 
 .about-content p {
+    display: table;  /* This prevents breaking within paragraphs */
     margin-bottom: 1.5rem;
 }
 
@@ -333,7 +334,7 @@ a:hover {
     margin-bottom: 0.5rem;
 }
 
-/* Add responsive media queries */
+/* Responsive Design */
 @media (max-width: var(--breakpoint-md)) {
     .sidebar {
         width: 100%;
@@ -350,6 +351,16 @@ a:hover {
     
     .about-container {
         flex-direction: column;
+    }
+
+    .profile {
+        float: none;
+        margin: 0 auto 2rem;
+        max-width: 300px;
+    }
+    
+    .about-content p {
+        display: block;  /* Reset to normal flow on mobile */
     }
 }
 
@@ -471,7 +482,7 @@ a:hover {
     border: 1px solid var(--color-text);
 }
 
-@media (max-width: 768px) {
+@media (max-width: var(--breakpoint-md)) {
     body {
         flex-direction: column;
         align-items: stretch;
@@ -575,14 +586,12 @@ a:hover {
     }
 }
 
-/* Remove or override any transforms on larger screens */
 @media (min-width: 769px) {
     .sidebar {
         left: calc(50% - var(--total-width) / 2);
     }
 }
 
-/* Additional responsive adjustments */
 @media (max-width: 480px) {
     :root {
         --font-size-base: 0.9rem;
@@ -596,7 +605,6 @@ a:hover {
     }
 }
 
-/* Mobile-first media queries */
 @media (min-width: var(--breakpoint-md)) {
     .sidebar {
         width: var(--sidebar-width);
@@ -608,5 +616,22 @@ a:hover {
     .content {
         margin-left: var(--sidebar-width);
         padding: var(--spacing-lg) var(--spacing-xl);
+    }
+}
+
+.ascii-art {
+    font-family: monospace;
+    white-space: pre;
+    font-size: calc(0.45vw);  /* This will scale based on viewport width */
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: var(--color-text);
+}
+
+@media (max-width: var(--breakpoint-md)) {
+    .ascii-art {
+        font-size: 3px; /* Minimum size for mobile */
     }
 }
