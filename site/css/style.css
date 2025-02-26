@@ -628,19 +628,21 @@ a:hover {
     }
 }
 
+.ascii-art-container {
+    position: relative;
+    margin-top: 2rem;
+    width: 100%;
+}
+
 .ascii-art {
-    font-family: monospace;
-    white-space: pre;
-    font-size: calc(0.45vw);  /* This will scale based on viewport width */
-    line-height: 1;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    color: var(--color-text);
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 @media (max-width: var(--breakpoint-md)) {
-    .ascii-art {
-        font-size: 3px; /* Minimum size for mobile */
+    .ascii-art-container {
+        transform: scale(0.7);
+        transform-origin: left top;
     }
 }
