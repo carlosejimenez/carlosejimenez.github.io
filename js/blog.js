@@ -61,28 +61,20 @@ async function loadBlogPost(slug) {
     try {
         history.replaceState(null, '', `#blog/${slug}`);
         
-        // Debug logging
-        console.log('Attempting to fetch post from:', `${BASE_PATH}posts/${slug}.md`);
-        console.log('Current BASE_PATH:', BASE_PATH);
-        console.log('Current pathname:', window.location.pathname);
+        // Fetch from raw GitHub content instead of the processed Jekyll version
+        const response = await fetch(`https://raw.githubusercontent.com/carlosejimenez/carlosejimenez.github.io/main/site/posts/${slug}.md`);
         
-        // Try both with and without the .md extension
-        let response = await fetch(`${BASE_PATH}posts/${slug}.md`);
         if (!response.ok) {
-            // Try without .md extension as fallback
-            response = await fetch(`${BASE_PATH}posts/${slug}`);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
         
         const markdown = await response.text();
         
-        const blogList = document.querySelector('.blog-list');
-        const blogContent = document.querySelector('.blog-content');
-        
         // Remove frontmatter before converting to HTML
         const cleanedMarkdown = markdown.replace(/---[\s\S]*?---/, '').trim();
+        
+        const blogList = document.querySelector('.blog-list');
+        const blogContent = document.querySelector('.blog-content');
         
         // Convert markdown to HTML
         const html = `
@@ -94,6 +86,8 @@ async function loadBlogPost(slug) {
         
         blogList.style.display = 'none';
         blogContent.style.display = 'block';
+        
+        // Use innerHTML to render the HTML properly
         blogContent.innerHTML = html;
         blogContent.classList.add('active');
         
