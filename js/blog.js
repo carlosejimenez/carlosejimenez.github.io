@@ -3,6 +3,14 @@ const BASE_PATH = window.location.pathname.endsWith('/')
     ? window.location.pathname 
     : window.location.pathname + '/';
 
+// Add this right after importing the marked library (at the beginning of your DOMContentLoaded handler)
+// Configure marked to allow HTML
+marked.setOptions({
+  sanitize: false,
+  gfm: true,
+  breaks: true
+});
+
 function convertMarkdownToHTML(markdown) {
     return marked.parse(markdown);
 }
